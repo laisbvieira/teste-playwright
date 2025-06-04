@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login</title>
+  </head>
+  <body>
+    <h1>Login</h1>
+    <form method="POST" action="/login" id="form-login">
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email"
+        required
+      />
+      <input
+        type="password"
+        name="senha"
+        id="senha"
+        placeholder="Senha"
+        required
+      />
+      <button type="submit">Entrar</button>
+      <p class="erro" id="erro" style="display: none">
+        E-mail ou senha inválidos
+      </p>
+    </form>
+  </body>
+  <script src="/index.js"></script>
+</html>
+
+<script>
+  const erroMsg = document.getElementById("erro");
+  const params = new URLSearchParams(window.location.search);
+  if (params.has("erro")) {
+    erroMsg.style.display = "block";
+  }
+</script>
